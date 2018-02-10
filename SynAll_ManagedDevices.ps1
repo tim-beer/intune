@@ -1,5 +1,10 @@
 
 <#
+This Script has Been Modified from Dave Falkus's Check_lastSyncDateTime script to
+sync any device not synced in the time frame specified in the script
+-------- Change time Value on Line 164 to your requirement --------
+-------- Change values line 189 - 200 to your requirements for device types
+Tim Beer
 
 .COPYRIGHT
 Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
@@ -182,8 +187,18 @@ Write-Host
         Write-Host
 
             # Looping through all the devices returned
+
+            #EAS ONLY
+
            #foreach($Device in $Devices | Where {$_.managementAgent -match "eas"})
+
+            #MDM ONLY
+
             foreach($Device in $Devices | Where {$_.managementAgent -match "mdm"})
+
+            #ALL Devices
+
+            #foreach($Device in $Devices)
 {
 
             write-host "------------------------------------------------------------------"
