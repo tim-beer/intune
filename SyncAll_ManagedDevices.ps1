@@ -287,7 +287,7 @@ $global:authToken = Get-AuthToken -User $User
 # Filter for the minimum number of minutes where the device hasn't synced
 
 #change the minutes value for your own requirements
-$Minutes = 1
+$Minutes = 25
 $Minutesago = "{0:s}" -f (get-date).AddMinutes(-$minutes) + "Z"
 
 $CurrentTime = [System.DateTimeOffset]::Now
@@ -312,9 +312,13 @@ Write-Host
         $Devices | foreach { $_.deviceName + " - " + ($_.managementAgent).toupper() + " - " + $_.userPrincipalName + " - " + $_.lastSyncDateTime } 
 
         #option to choose mdm or eas
-        $mdmoreas=Read-Host "Type MDM or EAS to choose which type of devices to sync" 
+
+        write-host "------------------------------------------------------------------"
+        Write-Host
+        $mdmoreas=Read-Host "Type MDM or EAS to choose which type of devices to sync"
         
         Write-Host
+        
 
             # Looping through all the devices returned
 
