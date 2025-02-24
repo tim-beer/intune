@@ -5,6 +5,7 @@ Intune Repository
 Defender Baseline 24H1
 
 Contains the Microsoft Defender For Endpoint 24H1 Security Baseline as settings Catalog files ready for import.
+Also Added a comparison Excel for Defender and Windows Baseline
 
 24H2 Baseline
 
